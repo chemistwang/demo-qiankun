@@ -1,0 +1,24 @@
+.login-page {
+  height: 100%;
+  background: url("../../assets/coffee-bg.webp") no-repeat center;
+  background-size: 100% 100%;
+}
+
+.login-form {
+  position: absolute;
+  width: 20rem;
+  right: 10rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  opacity: 0.9;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.login-form-title {
+  text-align: center;
+  line-height: 4rem;
+  font-weight: 600;
+  font-size: 2rem;
+}

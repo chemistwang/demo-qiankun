@@ -1,9 +1,10 @@
 import "./public-path";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import Router from "./router";
+import "./style/reset.css";
+import "./style/global.css";
 
 // const root = ReactDOM.createRoot(
 //   document.getElementById('root') as HTMLElement
@@ -24,7 +25,7 @@ function render(props: any) {
 
   root.render(
     <React.StrictMode>
-      <App />
+      <Router />
     </React.StrictMode>
   );
 }

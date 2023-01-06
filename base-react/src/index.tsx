@@ -1,28 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
+import "./style/reset.css";
+import "./style/global.css";
 import reportWebVitals from "./reportWebVitals";
 import { registerMicroApps, start } from "qiankun";
+import Router from "./router";
 
 registerMicroApps([
   {
     name: "react app 18",
     entry: "//localhost:11111",
     container: "#mini-react18",
-    activeRule: "/mini-react18",
+    activeRule: "/workbench/mini-react18",
   },
   {
     name: "vue app 2",
     entry: "//localhost:11112",
     container: "#mini-vue2",
-    activeRule: "/mini-vue2",
-  },
-  {
-    name: "vue app 3",
-    entry: "//localhost:11113",
-    container: "#mini-vue3",
-    activeRule: "/mini-vue3",
+    activeRule: "/workbench/mini-vue2",
   },
 ]);
 // 启动 qiankun
@@ -33,7 +28,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <Router />
   </React.StrictMode>
 );
 
