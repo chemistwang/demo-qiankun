@@ -5,6 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import Router from "./router";
 import "./style/reset.css";
 import "./style/global.css";
+import actions from "./action";
 
 // const root = ReactDOM.createRoot(
 //   document.getElementById('root') as HTMLElement
@@ -18,6 +19,10 @@ import "./style/global.css";
 // let root: ReactDOM.Root;
 
 function render(props: any) {
+  if (props) {
+    actions.setActions(props);
+  }
+
   const { container } = props;
   const root = container
     ? ReactDOM.createRoot(container.querySelector("#root") as HTMLElement)

@@ -4,9 +4,11 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
-import { Breadcrumb, Layout, Menu, theme } from "antd";
+import { Breadcrumb, Layout, Menu, theme, Button, Avatar, Badge } from "antd";
+import { useEffect } from "react";
 import { useNavigate, Outlet } from "react-router-dom";
-
+import "./index.css";
+import actions from "../../qiankun/actions";
 const { Header, Content, Sider } = Layout;
 
 // 头部菜单
@@ -22,11 +24,25 @@ const WorkbenchPage: React.FC = () => {
     token: { colorBgContainer },
   } = theme.useToken();
 
+  useEffect(() => {
+    actions.onGlobalStateChange((state, prevState) => {
+      // state: 变更后状态; prevState: 变更前状态
+      console.log("main app observer prevState: ", prevState);
+      console.log("main app observer state: ", state);
+    });
+  }, []);
+
+  const clickFn = () => {
+    actions.setGlobalState({
+      age: Math.floor(Math.random() * 100),
+    });
+  };
+
   return (
     <Layout style={{ height: "100%" }}>
       <Header className="header">
-        <div className="logo" />
         <Menu
+          style={{ flex: 1 }}
           theme="dark"
           mode="horizontal"
           defaultSelectedKeys={["/workbench"]}
@@ -35,6 +51,10 @@ const WorkbenchPage: React.FC = () => {
             navigator(e.key);
           }}
         />
+        <Button onClick={clickFn}>Click</Button>
+        <Badge count={1}>
+          <Avatar shape="square" icon={<UserOutlined />} />
+        </Badge>
       </Header>
       <Outlet></Outlet>
     </Layout>

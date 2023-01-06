@@ -3,8 +3,6 @@ import FormPage from "../page/formPage";
 import TimelinePage from "../page/timelinePage";
 import WorkbenchPage from "../page/workbench";
 
-console.log(window.__POWERED_BY_QIANKUN__, "xxxxx");
-
 const router = createBrowserRouter(
   [
     {
