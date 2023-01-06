@@ -1,0 +1,30 @@
+{
+  "name": "demo-qiankun",
+  "version": "1.0.0",
+  "description": "qiankun demo 小试",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "demo:install": "npm-run-all --serial install:*",
+    "demo:start": "npm-run-all --parallel start:*",
+    "install:main": "cd base-react && npm install",
+    "start:main": "cd base-react && npm run start",
+    "install:react18": "cd mini-react18 && npm install",
+    "start:react18": "cd mini-react18 && npm run start",
+    "install:vue2": "cd mini-vue2 && npm install",
+    "start:vue2": "cd mini-vue2 && npm run serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chemistwang/demo-qiankun.git"
+  },
+  "author": "chemistwang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chemistwang/demo-qiankun/issues"
+  },
+  "homepage": "https://github.com/chemistwang/demo-qiankun#readme",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
